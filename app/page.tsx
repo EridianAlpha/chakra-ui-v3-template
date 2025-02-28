@@ -1,11 +1,18 @@
 import { Box, Checkbox, ClientOnly, HStack, Heading, Progress, RadioGroup, Skeleton, VStack } from "@chakra-ui/react"
 import Image from "next/image"
-import { ColorModeToggle } from "../components/color-mode-toggle"
+import { ColorModeToggle } from "../components/color-mode/ColorModeToggle"
+
+import Footer from "../components/Footer"
 
 export default async function Page() {
     return (
-        <Box textAlign="center" fontSize="xl" pt="30vh">
-            <VStack gap="8">
+        <VStack minH="100vh">
+            <Box pos="absolute" top="4" right="4">
+                <ClientOnly fallback={<Skeleton w="10" h="10" rounded="md" />}>
+                    <ColorModeToggle />
+                </ClientOnly>
+            </Box>
+            <VStack gap="8" justifyContent={"center"} alignItems={"center"} flexGrow={1}>
                 <Image alt="chakra logo" src="/static/logo.svg" width="80" height="80" />
                 <Heading size="2xl" letterSpacing="tight">
                     ChakraUI V3 & Next.js Template
@@ -45,12 +52,8 @@ export default async function Page() {
                     </Progress.Track>
                 </Progress.Root>
             </VStack>
-
-            <Box pos="absolute" top="4" right="4">
-                <ClientOnly fallback={<Skeleton w="10" h="10" rounded="md" />}>
-                    <ColorModeToggle />
-                </ClientOnly>
-            </Box>
-        </Box>
+            <Box flexGrow={1} />
+            <Footer />
+        </VStack>
     )
 }
