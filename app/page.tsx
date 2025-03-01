@@ -6,7 +6,7 @@ import Footer from "../components/Footer"
 
 export default async function Page() {
     return (
-        <VStack minH="100vh">
+        <VStack minH="100vh" bg={"pageBackground"}>
             <Box pos="absolute" top="4" right="4">
                 <ClientOnly fallback={<Skeleton w="10" h="10" rounded="md" />}>
                     <ColorModeToggle />
