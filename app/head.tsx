@@ -9,8 +9,8 @@ export default function Head() {
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
             {/* Mobile browser header color */}
-            <meta name="theme-color" content="#FAFAFA" media="(prefers-color-scheme: light)" />
-            <meta name="theme-color" content="#09090B" media="(prefers-color-scheme: dark)" />
+            <meta name="theme-color" content={"pageBackground._light"} media="(prefers-color-scheme: light)" />
+            <meta name="theme-color" content={"pageBackground._dark"} media="(prefers-color-scheme: dark)" />
 
             {/* Favicon & Icons */}
             <link rel="icon" href="/static/favicon.ico" sizes="any" />
