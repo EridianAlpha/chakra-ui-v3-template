@@ -7,8 +7,8 @@ import { customConfig } from "../styles/theme"
 
 export function Provider(props: ColorModeProviderProps) {
     return (
-        <ChakraProvider value={customConfig}>
-            <ColorModeProvider {...props} />
-        </ChakraProvider>
+        <ColorModeProvider attribute="class" disableTransitionOnChange {...props}>
+            <ChakraProvider value={customConfig}>{props.children}</ChakraProvider>
+        </ColorModeProvider>
     )
 }
